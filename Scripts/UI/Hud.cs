@@ -16,20 +16,37 @@ public partial class Hud : Control
 		
 	}
 
-	public void OnButtonPressed()
+	public void OnChangeButtonPressed()
 	{
 		GetParent().GetNode<Cursor>("Cursor").ToggleActive();
 		GD.Print("Button pressed");
-		ToggleMenu();
+		ToggleMenu("change");
 		GetNode<Control>("Labels").Visible = !GetNode<Control>("Labels").Visible;
-
 		GetNode<Button>("ChangeBuildingButton").Text = Cursor.IsActive ? "Change Selected Building" : "Close";
+	}
+
+	public void OnViewButtonPressed()
+	{
+		// Show the popup and the stats labels inside
+		ToggleMenu("stats");
+		GD.Print("Button pressed");
+	}
+
+	private void ToggleMenu(string whatToShow)
+	{
+		GetNode<Control>("Popup").Visible = !GetNode<Control>("Popup").Visible;
+		
+		switch (whatToShow)
+		{
+			case "change": GetNode<Control>("Popup/Buttons").Visible = !GetNode<Control>("Popup/Buttons").Visible; break;
+			case "stats": GetNode<Control>("Popup/StatsLabels").Visible = !GetNode<Control>("Popup/StatsLabels").Visible; break;
+			default: throw new Exception($"Unknown what to show: {whatToShow}");
+		}
 	}
 
 	private void ToggleMenu()
 	{
 		GetNode<Control>("Popup").Visible = !GetNode<Control>("Popup").Visible;
-		GetNode<Control>("Labels").Visible = !GetNode<Control>("Labels").Visible;
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -39,7 +56,7 @@ public partial class Hud : Control
 		{
 			if (IsActive())
 			{
-				OnButtonPressed();
+				OnChangeButtonPressed();
 			}
 		}
 	}
