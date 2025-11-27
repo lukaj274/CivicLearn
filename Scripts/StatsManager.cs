@@ -32,6 +32,4 @@ public partial class StatsManager : Node2D
 		
 		_moneyLabel.Text = $"Money: {Money}";
 	}
-	
-	
 }

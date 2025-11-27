@@ -12,12 +12,7 @@ public partial class School : Node2D
 		StatsManager.Money -= 100;
 		StatsManager.Education += 10;
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
+	
 	public override string ToString()
 	{
 		return $"School #{_counter}";
