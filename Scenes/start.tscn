@@ -23,7 +23,7 @@ offset_right = 944.0
 offset_bottom = 544.0
 color = Color(0.15912256, 0.2209065, 0.26857492, 1)
 
-[node name="StartButton" type="TextureButton" parent="ColorRect"]
+[node name="StartButton" type="TextureButton" parent="ColorRect" node_paths=PackedStringArray("SoundPlayer")]
 layout_mode = 0
 offset_left = 528.0
 offset_top = 72.0
@@ -35,8 +35,10 @@ texture_hover = ExtResource("4_iceld")
 stretch_mode = 5
 script = ExtResource("3_lb6bl")
 MainScene = ExtResource("4_rk01k")
+SoundPlayer = NodePath("AudioPlayer")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ColorRect/StartButton"]
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="ColorRect/StartButton"]
 stream = ExtResource("7_pg4io")
+area_mask = 3
 
 [connection signal="pressed" from="ColorRect/StartButton" to="ColorRect/StartButton" method="OnStartButtonPressed"]
