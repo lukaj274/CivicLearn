@@ -2,13 +2,13 @@ using Godot;
 
 public partial class Powerplant : Node2D
 {
-	private static int _counter = 0;
+	public static int Counter = 0;
 	private static bool _hasBeenRun;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_counter++;
+		Counter++;
 		StatsManager.Money -= 200;
 		StatsManager.Power += 10;
 		_hasBeenRun = false;
@@ -37,6 +37,6 @@ public partial class Powerplant : Node2D
 
 	public override string ToString()
 	{
-		return $"Power Plant #{_counter}";
+		return $"Power Plant #{Counter}";
 	}
 }
