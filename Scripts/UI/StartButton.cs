@@ -9,6 +9,8 @@ public partial class StartButton : TextureButton
 	public void OnStartButtonPressed()
 	{
 		SoundPlayer.Play();
+		
+		GetTree().CreateTimer(5);
 		GetTree().ChangeSceneToPacked(MainScene);
 	}
 }
