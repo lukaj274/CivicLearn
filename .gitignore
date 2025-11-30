@@ -2,3 +2,11 @@
 .godot/
 /android/
 .idea/
+CivicLearn2.0-Linux
+data_CivicLearn2.0_linuxbsd_x86_64
+data_CivicLearn2.0_windows_x86_64
+*.exe
+*.sh
+*.x86_64
+*.zip
+*.pck
