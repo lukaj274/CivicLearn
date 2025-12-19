@@ -1231,7 +1231,7 @@ buildings = NodePath("../../../../Buildings")
 visible = false
 
 [node name="SchoolLabel" parent="UI/Popup/StatsLabels" index="0"]
-offset_left = 760.0
+offset_left = 528.0
 offset_top = 472.0
 offset_right = 1088.0
 offset_bottom = 512.0
